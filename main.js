@@ -10,7 +10,7 @@ function getPairsOfStudents(students) {
     let pairsOfStudents = [];
     for (let index = 0; index < studentsMen.length; index++) {
         pairsOfStudents[index] = [studentsMen[index], studentsWomen[index]];
-    } 
+    }
     return pairsOfStudents;
 }
 const pairsOfStudents = getPairsOfStudents(students);
@@ -21,7 +21,7 @@ function getThemesForPairs(pairsOfStudents, themes) {
     let themesForPairs = [];
     for (let index = 0; index < themes.length; index++) {
         themesForPairs[index] = [pairsOfStudents[index].join(' i '), themes[index]];
-    } 
+    }
     return themesForPairs;
 }
 const themesForPairs = getThemesForPairs(pairsOfStudents, themes);
@@ -42,8 +42,8 @@ console.log(marksForStudents);
 function getMarksForPairs(themesForPairs) {
     const minRandomMark = 1;
     const maxRandomMark = 5;
-    let randomMark = [];
-    //let marksForPairs = [];
+    let randomMark;
+    let marksForPairs = [];
     for (let index = 0; index < themesForPairs.length; index++) {
         randomMark = Math.trunc(minRandomMark + Math.random() * (maxRandomMark - minRandomMark + 1));
         marksForPairs[index] = [themesForPairs[index], randomMark];
@@ -52,7 +52,3 @@ function getMarksForPairs(themesForPairs) {
 }
 const marksForPairs = getMarksForPairs(themesForPairs);
 console.log(marksForPairs);
-
-console.log(students);
-console.log(themes);
-console.log(marks);
