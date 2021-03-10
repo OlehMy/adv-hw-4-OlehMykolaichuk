@@ -39,16 +39,16 @@ const marksForStudents = getMarksForStudents(students, marks);
 console.log('Marks for students', marksForStudents);
 
 // Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт
-function getMarksForPairs(themesForPairs) {
+function getMarksForPairs(pairsOfStudents, themes) {
     const minRandomMark = 1;
     const maxRandomMark = 5;
     let randomMark;
     let marksForPairs = [];
-    for (let index = 0; index < themesForPairs.length; index++) {
+    for (let index = 0; index < pairsOfStudents.length; index++) {
         randomMark = Math.trunc(minRandomMark + Math.random() * (maxRandomMark - minRandomMark + 1));
-        marksForPairs[index] = [themesForPairs[index].join(', '), randomMark];
+        marksForPairs[index] = [pairsOfStudents[index].join(' i '), themes[index], randomMark];
     }
     return marksForPairs;
 }
-const marksForPairs = getMarksForPairs(themesForPairs);
+const marksForPairs = getMarksForPairs(pairsOfStudents, themes);
 console.log('Random marks for pairs of students', marksForPairs);
