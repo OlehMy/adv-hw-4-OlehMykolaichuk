@@ -14,7 +14,7 @@ function getPairsOfStudents(students) {
     return pairsOfStudents;
 }
 const pairsOfStudents = getPairsOfStudents(students);
-console.log(pairsOfStudents);
+console.log('Pairs of students', pairsOfStudents);
 
 // Зіставте пари та теми проєктів, над якими студенти будуть працювати
 function getThemesForPairs(pairsOfStudents, themes) {
@@ -25,7 +25,7 @@ function getThemesForPairs(pairsOfStudents, themes) {
     return themesForPairs;
 }
 const themesForPairs = getThemesForPairs(pairsOfStudents, themes);
-console.log(themesForPairs);
+console.log('Themes for pairs', themesForPairs);
 
 // Зіставте оцінки(marks) зі студентом(students)
 function getMarksForStudents(students, marks) {
@@ -36,7 +36,7 @@ function getMarksForStudents(students, marks) {
     return marksForStudents;
 }
 const marksForStudents = getMarksForStudents(students, marks);
-console.log(marksForStudents);
+console.log('Marks for students', marksForStudents);
 
 // Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт
 function getMarksForPairs(themesForPairs) {
@@ -46,9 +46,9 @@ function getMarksForPairs(themesForPairs) {
     let marksForPairs = [];
     for (let index = 0; index < themesForPairs.length; index++) {
         randomMark = Math.trunc(minRandomMark + Math.random() * (maxRandomMark - minRandomMark + 1));
-        marksForPairs[index] = [themesForPairs[index], randomMark];
+        marksForPairs[index] = [themesForPairs[index].join(', '), randomMark];
     }
     return marksForPairs;
 }
 const marksForPairs = getMarksForPairs(themesForPairs);
-console.log(marksForPairs);
+console.log('Random marks for pairs of students', marksForPairs);
